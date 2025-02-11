@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Links</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background-color: black;
-            color: #ffdd57;
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
             overflow-x: hidden; /* Hide horizontal overflow */
             overflow-y: auto; /* Enable vertical scrolling */
-            height: 100vh; /* Ensure the body takes full viewport height */
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: #ffdd57;
         }
         #loading {
             position: fixed;
@@ -80,6 +81,19 @@
     </style>
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
+
+        function updateTime() {
+            var now = new Date();
+            var datetimeString = now.toLocaleString('en-US', { timeZone: 'America/Chicago' });
+            document.getElementById('datetime').textContent = datetimeString;
+        }
+        function showMainContent() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+        setTimeout(showMainContent, 3000);
     </script>
 </head>
 <body>
@@ -132,20 +146,5 @@
             <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Visit Amy and Daniel's Games</a></p>
         </div>
     </div>
-
-    <script>
-        function updateTime() {
-            var now = new Date();
-            var datetimeString = now.toLocaleString('en-US', { timeZone: 'America/Chicago' });
-            document.getElementById('datetime').textContent = datetimeString;
-        }
-        function showMainContent() {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-        }
-        updateTime();
-        setInterval(updateTime, 1000);
-        setTimeout(showMainContent, 3000);
-    </script>
 </body>
 </html>
