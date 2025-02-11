@@ -64,7 +64,20 @@
             color: #ffaa00;
             transform: scale(1.1);
         }
+        /* Disable text selection and right-click */
+        body, h1, h2, .section a, .time, #loading span {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        body {
+            -webkit-touch-callout: none;
+        }
     </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 </head>
 <body>
     <div id="loading">
@@ -72,7 +85,7 @@
     </div>
 
     <div id="main-content">
-        <h1>Proxy Store</h1>
+        <h1>Welcome to My Website</h1>
         <div class="time">
             Date and Time: <span id="datetime"></span>
         </div>
