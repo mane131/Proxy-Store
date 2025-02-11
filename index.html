@@ -10,7 +10,9 @@
             margin: 20px;
             background-color: black;
             color: #ffdd57;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Hide horizontal overflow */
+            overflow-y: auto; /* Enable vertical scrolling */
+            height: 100vh; /* Ensure the body takes full viewport height */
         }
         #loading {
             position: fixed;
@@ -34,6 +36,7 @@
         }
         #main-content {
             display: none;
+            padding-bottom: 20px; /* Add some padding to prevent content cutoff */
         }
         h1, h2 {
             color: #ffaa00;
