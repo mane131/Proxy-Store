@@ -90,6 +90,7 @@
         function showMainContent() {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
+            document.body.style.overflowY = 'auto'; // Ensure scrolling is enabled when the main content is displayed
         }
         updateTime();
         setInterval(updateTime, 1000);
