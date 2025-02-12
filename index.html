@@ -10,9 +10,11 @@
             margin: 20px;
             background: linear-gradient(to right, #f0f0f0, #e0e0e0);
             color: #333;
+            transition: background 0.3s, color 0.3s; /* Smooth transition */
         }
         h1, h2 {
             color: #0056b3;
+            transition: color 0.3s; /* Smooth transition */
         }
         h1 {
             border-bottom: 2px solid #0056b3;
@@ -23,6 +25,7 @@
             margin-bottom: 20px;
             text-align: center;
             color: #0056b3;
+            transition: color 0.3s; /* Smooth transition */
         }
         .section {
             margin: 30px 0;
@@ -30,6 +33,7 @@
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
         .section a {
             text-decoration: none;
@@ -130,9 +134,16 @@
             var command = document.getElementById('command-input').value.toLowerCase().trim();
             switch (command) {
                 case 'help':
-                    alert("Available commands:\n1. help\n2. show time\n3. another command\n... (list more commands)");
+                    alert("Available commands:\n1. help\n2. dark mode");
                     break;
-                // Add more cases for different commands
+                case 'dark mode':
+                    document.body.style.background = '#333';
+                    document.body.style.color = '#ffdd57';
+                    document.querySelectorAll('h1, h2').forEach(el => el.style.color = '#ffdd57');
+                    document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#444');
+                    document.querySelectorAll('.section a').forEach(el => el.style.color = '#ffdd57');
+                    document.querySelectorAll('.time').forEach(el => el.style.color = '#ffdd57');
+                    break;
                 default:
                     alert("Unknown command");
                     break;
