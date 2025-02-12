@@ -72,9 +72,7 @@
 </head>
 <body>
     <h1>SecretV2. gtp website btw</h1>
-    <div class="time">
-        Date and Time: <span id="datetime"></span>
-    </div>
+    <div class="time" id="datetime"></div>
     
     <div class="section">
         <h2>Interstellars</h2>
@@ -126,13 +124,19 @@
             var datetimeString = now.toLocaleString('en-US', { timeZone: 'America/Chicago' });
             document.getElementById('datetime').textContent = datetimeString;
         }
-        updateTime();
         setInterval(updateTime, 1000);
 
         function executeCommand() {
-            var command = document.getElementById('command-input').value;
-            alert("Executing command: " + command);
-            // Add your custom command handling logic here
+            var command = document.getElementById('command-input').value.toLowerCase().trim();
+            switch (command) {
+                case 'help':
+                    alert("Available commands:\n1. help\n2. show time\n3. another command\n... (list more commands)");
+                    break;
+                // Add more cases for different commands
+                default:
+                    alert("Unknown command");
+                    break;
+            }
         }
     </script>
 </body>
