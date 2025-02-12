@@ -5,147 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Links</title>
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Hide horizontal overflow */
-            overflow-y: auto; /* Enable vertical scrolling */
+        body {
             font-family: 'Arial', sans-serif;
-            background-color: black;
-            color: #ffdd57;
-        }
-        #loading {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            animation: flashText 1s infinite;
-        }
-        #loading span {
-            font-size: 3em;
-            color: red;
-            text-shadow: 0 0 20px red;
-        }
-        @keyframes flashText {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        #main-content {
-            display: none;
-            padding-bottom: 20px; /* Add some padding to prevent content cutoff */
+            margin: 20px;
+            background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+            color: #333;
         }
         h1, h2 {
-            color: #ffaa00;
+            color: #0056b3;
         }
         h1 {
-            border-bottom: 2px solid #ffaa00;
+            border-bottom: 2px solid #0056b3;
             padding-bottom: 10px;
         }
         .time {
             font-size: 1.2em;
             margin-bottom: 20px;
             text-align: center;
+            color: #0056b3;
         }
         .section {
             margin: 30px 0;
             padding: 20px;
             border-radius: 10px;
-            background-color: #333;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .section a {
             text-decoration: none;
-            color: #ffdd57;
+            color: #007BFF;
             font-size: 1.1em;
             transition: color 0.3s, transform 0.3s;
         }
         .section a:hover {
-            color: #ffaa00;
+            color: #0056b3;
             transform: scale(1.1);
         }
-        /* Disable text selection and right-click */
-        body, h1, h2, .section a, .time, #loading span {
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
-        body {
-            -webkit-touch-callout: none;
-        }
     </style>
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <div class="time">
+        Date and Time: <span id="datetime"></span>
+    </div>
+    
+    <div class="section">
+        <h2>Interstellars</h2>
+        <p><a href="https://english-ll-learning.pagostepeapulco.gob.mx/" target="_blank">Visit English Learning</a></p>
+        <p><a href="https://apache.niteryder.net/" target="_blank">Visit Apache</a></p>
+    </div>
+    
+    <div class="section">
+        <h2>HammerHead</h2>
+        <p><a href="https://mathhomework3.ollemans.com/" target="_blank">Visit Math Homework 3</a></p>
+        <p><a href="https://mathhomework4.innovatecchile.com/" target="_blank">Visit Math Homework 4</a></p>
+        <p><a href="https://silhouette.brandish.rammerhead.nunc.se/" target="_blank">Visit Silhouette</a></p>
+        <p><a href="https://ohsigma.yesitsreal.nunc.se/" target="_blank">Visit OhSigma</a></p>
+    </div>
+    
+    <div class="section">
+        <h2>Utopia</h2>
+        <p><a href="https://edu.focus.decharacter.com/" target="_blank">Visit Edu Focus</a></p>
+        <p><a href="https://real.books.bahcekoysutyumurta.com/" target="_blank">Visit Real Books</a></p>
+        <p><a href="https://data.quiz.hkenca.org/" target="_blank">Visit Data Quiz</a></p>
+    </div>
+    
+    <div class="section">
+        <h2>Ai</h2>
+        <p><a href="https://copilot.microsoft.com/" target="_blank">Visit Copilot</a></p>
+        <p><a href="https://www.deepseek.com/" target="_blank">Visit DeepSeek</a></p>
+    </div>
+    
+    <div class="section">
+        <h2>Email</h2>
+        <p><a href="https://www.mohmal.com/en/inbox#" target="_blank">Visit Mohmal</a></p>
+        <p><a href="https://tempmail.email/" target="_blank">Visit TempMail</a></p>
+    </div>
+    
+    <div class="section">
+        <h2>Game Websites</h2>
+        <p><a href="https://adamalsadi.github.io/games/index.html" target="_blank">Visit Adam AlSadi's Games</a></p>
+        <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Visit Amy and Daniel's Games</a></p>
+    </div>
 
+    <script>
         function updateTime() {
             var now = new Date();
             var datetimeString = now.toLocaleString('en-US', { timeZone: 'America/Chicago' });
             document.getElementById('datetime').textContent = datetimeString;
         }
-        function showMainContent() {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            document.body.style.overflowY = 'auto'; // Ensure scrolling is enabled when the main content is displayed
-        }
         updateTime();
         setInterval(updateTime, 1000);
-        setTimeout(showMainContent, 3000);
     </script>
-</head>
-<body>
-    <div id="loading">
-        <span>bomboclat</span>
-    </div>
-
-    <div id="main-content">
-        <h1>Welcome to My Website</h1>
-        <div class="time">
-            Date and Time: <span id="datetime"></span>
-        </div>
-        
-        <div class="section">
-            <h2>Interstellars</h2>
-            <p><a href="https://english-ll-learning.pagostepeapulco.gob.mx/" target="_blank">Visit English Learning</a></p>
-            <p><a href="https://apache.niteryder.net/" target="_blank">Visit Apache</a></p>
-        </div>
-        
-        <div class="section">
-            <h2>HammerHead</h2>
-            <p><a href="https://mathhomework3.ollemans.com/" target="_blank">Visit Math Homework 3</a></p>
-            <p><a href="https://mathhomework4.innovatecchile.com/" target="_blank">Visit Math Homework 4</a></p>
-            <p><a href="https://silhouette.brandish.rammerhead.nunc.se/" target="_blank">Visit Silhouette</a></p>
-            <p><a href="https://ohsigma.yesitsreal.nunc.se/" target="_blank">Visit OhSigma</a></p>
-        </div>
-        
-        <div class="section">
-            <h2>Utopia</h2>
-            <p><a href="https://edu.focus.decharacter.com/" target="_blank">Visit Edu Focus</a></p>
-            <p><a href="https://real.books.bahcekoysutyumurta.com/" target="_blank">Visit Real Books</a></p>
-            <p><a href="https://data.quiz.hkenca.org/" target="_blank">Visit Data Quiz</a></p>
-        </div>
-        
-        <div class="section">
-            <h2>Ai</h2>
-            <p><a href="https://copilot.microsoft.com/" target="_blank">Visit Copilot</a></p>
-            <p><a href="https://www.deepseek.com/" target="_blank">Visit DeepSeek</a></p>
-        </div>
-        
-        <div class="section">
-            <h2>Email</h2>
-            <p><a href="https://www.mohmal.com/en/inbox#" target="_blank">Visit Mohmal</a></p>
-            <p><a href="https://tempmail.email/" target="_blank">Visit TempMail</a></p>
-        </div>
-        
-        <div class="section">
-            <h2>Game Websites</h2>
-            <p><a href="https://adamalsadi.github.io/games/index.html" target="_blank">Visit Adam AlSadi's Games</a></p>
-            <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Visit Amy and Daniel's Games</a></p>
-        </div>
-    </div>
 </body>
 </html>
