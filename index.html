@@ -41,10 +41,37 @@
             color: #0056b3;
             transform: scale(1.1);
         }
+        .command-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .command-bar input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .command-bar button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>i really need a job.</h1>
+    <h1>SecretV2. gtp website btw</h1>
     <div class="time">
         Date and Time: <span id="datetime"></span>
     </div>
@@ -88,6 +115,11 @@
         <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Visit Amy and Daniel's Games</a></p>
     </div>
 
+    <div class="command-bar">
+        <input type="text" id="command-input" placeholder="Enter command here...">
+        <button onclick="executeCommand()">Execute</button>
+    </div>
+
     <script>
         function updateTime() {
             var now = new Date();
@@ -96,6 +128,12 @@
         }
         updateTime();
         setInterval(updateTime, 1000);
+
+        function executeCommand() {
+            var command = document.getElementById('command-input').value;
+            alert("Executing command: " + command);
+            // Add your custom command handling logic here
+        }
     </script>
 </body>
 </html>
