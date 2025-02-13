@@ -9,13 +9,13 @@
             font-family: 'Arial', sans-serif;
             margin: 20px;
             background: linear-gradient(to right, #333, #555);
-            color: #333; /* Match background color */
-            transition: background 0.3s, color 0.3s; /* Smooth transition */
+            color: #333;
+            transition: background 0.3s, color 0.3s;
         }
         h1, h2, .time, .section p, .section a {
-            color: #333; /* Match background color */
+            color: #333;
             text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57;
-            transition: color 0.3s, text-shadow 0.3s; /* Smooth transition */
+            transition: color 0.3s, text-shadow 0.3s;
         }
         h1 {
             border-bottom: 2px solid #ffdd57;
@@ -32,7 +32,7 @@
             border-radius: 10px;
             background-color: #444;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            transition: background-color 0.3s, color 0.3s;
         }
         .section a {
             text-decoration: none;
@@ -182,9 +182,8 @@
         <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
         <p><a href="https://wasdwasdwasdwasdwasdwasd.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://tutorialig.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
-                <p><a href="https://olncavior.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
-        <p><a href="https://oldaccguiop.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
-        <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
+        <p><a href="https://olncavior.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
+                <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://kom.is.sigma.df.cissp.or.id/index.html" target="_blank">Games</a></p>
         <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
         <p><a href="https://happy.holidays.df.cissp.or.id/" target="_blank">Games</a></p>
@@ -236,10 +235,10 @@
     </div>
 
     <div class="theme-ui" id="theme-ui">
-        <button class="close-btn" onclick="toggleThemeUI()">X</button>
-        <h3>Select a Theme</h3>
-        <button onclick="applyTheme('dark')">Dark Theme</button>
-        <button onclick="applyTheme('light')">Light Theme</button>
+        <button class="close-btn" onclick="closeThemeUI()">X</button>
+        <h3>Select Theme</h3>
+        <button onclick="setDarkMode()">Dark Mode</button>
+        <button onclick="setLightMode()">Light Mode</button>
     </div>
 
     <script>
@@ -250,4 +249,51 @@
         }
         setInterval(updateTime, 1000);
 
-        function
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+        }
+
+        function executeCommand() {
+            var command = document.getElementById('command-input').value.toLowerCase().trim();
+            switch (command) {
+                case 'help':
+                    alert("Available commands:\n1. help\n2. light mode\n3. themes");
+                    break;
+                case 'light mode':
+                    setLightMode();
+                    break;
+                case 'themes':
+                    document.getElementById('theme-ui').style.display = 'block';
+                    break;
+                default:
+                    alert("Unknown command");
+                    break;
+            }
+        }
+
+        function setDarkMode() {
+            document.body.style.background = 'linear-gradient(to right, #333, #555)';
+            document.body.style.color = '#333';
+            document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
+                el.style.color = '#333';
+                el.style.textShadow = '0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57';
+            });
+            document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#444');
+        }
+
+        function setLightMode() {
+            document.body.style.background = '#f0f0f0';
+            document.body.style.color = '#333';
+            document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
+                el.style.color = '#333';
+                el.style.textShadow = 'none';
+            });
+            document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#fff');
+        }
+
+        function closeThemeUI() {
+            document.getElementById('theme-ui').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
