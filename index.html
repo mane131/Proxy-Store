@@ -138,6 +138,14 @@
         <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Amy and Daniel's Games</a></p>
     </div>
 
+    <div class="section three-d">
+        <h2>Update Logs</h2>
+        <ul id="update-logs">
+            <li>2/13/2025, Added UI changes.</li>
+            <li>2/13/2025, Added Two Commands.</li>
+        </ul>
+    </div>
+
     <div class="command-bar">
         <input type="text" id="command-input" placeholder="Enter command here...">
         <button onclick="executeCommand()">Execute</button>
@@ -159,7 +167,7 @@
             var command = document.getElementById('command-input').value.toLowerCase().trim();
             switch (command) {
                 case 'help':
-                    alert("Available commands:\n1. help\n2. dark mode\n3. 3d");
+                    alert("Available commands:\n1. help\n2. dark mode");
                     break;
                 case 'dark mode':
                     document.body.style.background = '#333';
@@ -168,9 +176,6 @@
                     document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#444');
                     document.querySelectorAll('.section a').forEach(el => el.style.color = '#ffdd57');
                     document.querySelectorAll('.time').forEach(el => el.style.color = '#ffdd57');
-                    break;
-                case '3d':
-                    document.querySelectorAll('h1, h2, .time, .section').forEach(el => el.classList.toggle('three-d'));
                     break;
                 default:
                     alert("Unknown command");
