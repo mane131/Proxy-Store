@@ -89,21 +89,38 @@
             perspective: 1000px;
             box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
         }
+        .rtx {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+        .rtx:hover {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        .focus {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: none;
+        }
+        .blur {
+            backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 <body onload="hideLoader()">
     <div id="loader">Loading...</div>
-    <h1 class="three-d">SecretV2.</h1>
-    <div class="time three-d" id="datetime"></div>
+    <h1 class="three-d rtx">SecretV2.</h1>
+    <div class="time three-d rtx" id="datetime"></div>
     
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Interstellars</h2>
         <p><a href="https://english-ll-learning.pagostepeapulco.gob.mx/" target="_blank">Interstellar</a></p>
         <p><a href="https://apache.niteryder.net/" target="_blank">Interstellar</a></p>
         <p><a href="https://4287613382.uncork.biz/" target="_blank">Interstellar</a></p>
     </div>
     
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>HammerHead</h2>
         <p><a href="https://mathhomework3.ollemans.com/" target="_blank">HammerHead</a></p>
         <p><a href="https://mathhomework4.innovatecchile.com/" target="_blank">HammerHead</a></p>
@@ -111,7 +128,7 @@
         <p><a href="https://ohsigma.yesitsreal.nunc.se/" target="_blank">HammerHead</a></p>
     </div>
     
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Utopia</h2>
         <p><a href="https://edu.focus.decharacter.com/" target="_blank">Utopia</a></p>
         <p><a href="https://real.books.bahcekoysutyumurta.com/" target="_blank">Utopia</a></p>
@@ -125,19 +142,19 @@
         <p><a href="https://topic.notes.homebrewer.org/" target="_blank">Utopia</a></p>
     </div>
     
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Ai</h2>
         <p><a href="https://copilot.microsoft.com/" target="_blank">Visit Copilot</a></p>
         <p><a href="https://www.deepseek.com/" target="_blank">Visit DeepSeek</a></p>
     </div>
     
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Email</h2>
         <p><a href="https://www.mohmal.com/en/inbox#" target="_blank">Email</a></p>
         <p><a href="https://tempmail.email/" target="_blank">Email</a></p>
     </div>
 
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Games</h2>
         <p><a href="https://adamalsadi.github.io/games/index.html" target="_blank">Games</a></p>
         <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Games</a></p>
@@ -148,7 +165,7 @@
         <p><a href="https://tutorialig.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
         <p><a href="https://olncavior.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
         <p><a href="https://oldaccguiop.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
-        <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
+                <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://kom.is.sigma.df.cissp.or.id/index.html" target="_blank">Games</a></p>
         <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
         <p><a href="https://happy.holidays.df.cissp.or.id/" target="_blank">Games</a></p>
@@ -160,7 +177,7 @@
         <p><a href="https://smallbluebird.alyaf.com/" target="_blank">Games</a></p>
     </div>
 
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Tinfoil</h2>
         <p><a href="https://assignment.jmwubg.com.au/" target="_blank">Tinfoil</a></p>
         <p><a href="https://finti0lajpisd.global.ssl.fastly.net/" target="_blank">Tinfoil</a></p>
@@ -170,19 +187,19 @@
         <p><a href="http://schoology-math.ekharipati.com.np/" target="_blank">Tinfoil</a></p>
     </div>
 
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Arsenic</h2>
         <p><a href="https://ls.hrowhxkgiw.chikiyan.cl/" target="_blank">Arsenic</a></p>
         <p><a href="https://sigma4.chikiyan.cl/" target="_blank">Arsenic</a></p>
     </div>
 
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Space</h2>
         <p><a href="https://r.webconstructions.co.uk/" target="_blank">Space</a></p>
         <p><a href="https://skyzone.radarvision.co.za/" target="_blank">Space</a></p>
     </div>
 
-    <div class="section three-d">
+    <div class="section three-d rtx">
         <h2>Update Logs</h2>
         <ul id="update-logs">
             <li>New UI Changes</li>
@@ -191,7 +208,6 @@
             <li>Added "Tinfoil" Proxy</li>
             <li>Added "Arsenic" Proxy</li>
             <li>Added "Space" Proxy</li>
-            <li>2/13/2025</li>
         </ul>
     </div>
 
@@ -216,7 +232,7 @@
             var command = document.getElementById('command-input').value.toLowerCase().trim();
             switch (command) {
                 case 'help':
-                    alert("Available commands:\n1. help\n2. light mode");
+                    alert("Available commands:\n1. help\n2. light mode\n3. rtx");
                     break;
                 case 'light mode':
                     document.body.style.background = '#f0f0f0';
@@ -227,6 +243,27 @@
                     });
                     document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#fff');
                     document.querySelectorAll('.section a').forEach(el => el.style.color = '#007BFF');
+                    break;
+                case 'rtx':
+                    document.querySelectorAll('h1, h2, .time, .section').forEach(el => el.classList.toggle('rtx'));
+                    document.querySelectorAll('.section').forEach(section => {
+                        section.addEventListener('mouseover', function(event) {
+                            const target = event.target;
+                            if (target.matches('.section a, h2')) {
+                                setTimeout(() => {
+                                    document.querySelectorAll('.section, h1, h2, .time').forEach(el => el.classList.add('blur'));
+                                    target.classList.add('focus');
+                                }, 3000);
+                            }
+                        });
+                        section.addEventListener('mouseout', function(event) {
+                            const target = event.target;
+                            if (target.matches('.section a, h2')) {
+                                document.querySelectorAll('.section, h1, h2, .time').forEach(el => el.classList.remove('blur'));
+                                target.classList.remove('focus');
+                            }
+                        });
+                    });
                     break;
                 default:
                     alert("Unknown command");
