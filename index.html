@@ -9,12 +9,13 @@
             font-family: 'Arial', sans-serif;
             margin: 20px;
             background: linear-gradient(to right, #333, #555);
-            color: #f0f0f0;
+            color: #333; /* Match background color */
             transition: background 0.3s, color 0.3s; /* Smooth transition */
         }
-        h1, h2 {
-            color: #ffdd57;
-            transition: color 0.3s; /* Smooth transition */
+        h1, h2, .time, .section p, .section a {
+            color: #333; /* Match background color */
+            text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57;
+            transition: color 0.3s, text-shadow 0.3s; /* Smooth transition */
         }
         h1 {
             border-bottom: 2px solid #ffdd57;
@@ -24,8 +25,6 @@
             font-size: 1.2em;
             margin-bottom: 20px;
             text-align: center;
-            color: #ffdd57;
-            transition: color 0.3s; /* Smooth transition */
         }
         .section {
             margin: 30px 0;
@@ -37,7 +36,6 @@
         }
         .section a {
             text-decoration: none;
-            color: #ffdd57;
             font-size: 1.1em;
             transition: color 0.3s, transform 0.3s;
         }
@@ -171,10 +169,11 @@
                 case 'dark mode':
                     document.body.style.background = '#333';
                     document.body.style.color = '#ffdd57';
-                    document.querySelectorAll('h1, h2').forEach(el => el.style.color = '#ffdd57');
+                    document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
+                        el.style.color = '#333';
+                        el.style.textShadow = '0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57';
+                    });
                     document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#444');
-                    document.querySelectorAll('.section a').forEach(el => el.style.color = '#ffdd57');
-                    document.querySelectorAll('.time').forEach(el => el.style.color = '#ffdd57');
                     break;
                 default:
                     alert("Unknown command");
