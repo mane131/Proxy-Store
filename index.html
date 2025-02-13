@@ -139,7 +139,8 @@
     <div class="section three-d">
         <h2>Update Logs</h2>
         <ul id="update-logs">
-            <li>Initial release with basic functionality and commands (help, dark mode, 3D)</li>
+            <li>New UI Changes</li>
+            <li>Fixed Scrolling</li>
         </ul>
     </div>
 
@@ -164,16 +165,17 @@
             var command = document.getElementById('command-input').value.toLowerCase().trim();
             switch (command) {
                 case 'help':
-                    alert("Available commands:\n1. help\n2. dark mode");
+                    alert("Available commands:\n1. help\n2. light mode");
                     break;
-                case 'dark mode':
-                    document.body.style.background = '#333';
-                    document.body.style.color = '#ffdd57';
+                case 'light mode':
+                    document.body.style.background = '#f0f0f0';
+                    document.body.style.color = '#333';
                     document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
                         el.style.color = '#333';
-                        el.style.textShadow = '0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57';
+                        el.style.textShadow = 'none';
                     });
-                    document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#444');
+                    document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#fff');
+                    document.querySelectorAll('.section a').forEach(el => el.style.color = '#007BFF');
                     break;
                 default:
                     alert("Unknown command");
