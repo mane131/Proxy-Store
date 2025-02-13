@@ -85,21 +85,27 @@
             font-size: 2em;
             color: #0056b3;
         }
+        .three-d {
+            transform: rotateY(20deg) rotateX(10deg);
+            transition: transform 0.3s;
+            perspective: 1000px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body onload="hideLoader()">
     <div id="loader">Loading...</div>
-    <h1>SecretV2.</h1>
-    <div class="time" id="datetime"></div>
+    <h1 class="three-d">SecretV2.</h1>
+    <div class="time three-d" id="datetime"></div>
     
-    <div class="section">
+    <div class="section three-d">
         <h2>Interstellars</h2>
         <p><a href="https://english-ll-learning.pagostepeapulco.gob.mx/" target="_blank">Interstellar</a></p>
         <p><a href="https://apache.niteryder.net/" target="_blank">Interstellar</a></p>
         <p><a href="https://4287613382.uncork.biz/" target="_blank">Interstellar</a></p>
     </div>
     
-    <div class="section">
+    <div class="section three-d">
         <h2>HammerHead</h2>
         <p><a href="https://mathhomework3.ollemans.com/" target="_blank">HammerHead</a></p>
         <p><a href="https://mathhomework4.innovatecchile.com/" target="_blank">HammerHead</a></p>
@@ -107,26 +113,26 @@
         <p><a href="https://ohsigma.yesitsreal.nunc.se/" target="_blank">HammerHead</a></p>
     </div>
     
-    <div class="section">
+    <div class="section three-d">
         <h2>Utopia</h2>
         <p><a href="https://edu.focus.decharacter.com/" target="_blank">Utopia</a></p>
         <p><a href="https://real.books.bahcekoysutyumurta.com/" target="_blank">Utopia</a></p>
         <p><a href="https://data.quiz.hkenca.org/" target="_blank">Utopia</a></p>
     </div>
     
-    <div class="section">
+    <div class="section three-d">
         <h2>Ai</h2>
         <p><a href="https://copilot.microsoft.com/" target="_blank">Visit Copilot</a></p>
         <p><a href="https://www.deepseek.com/" target="_blank">Visit DeepSeek</a></p>
     </div>
     
-    <div class="section">
+    <div class="section three-d">
         <h2>Email</h2>
         <p><a href="https://www.mohmal.com/en/inbox#" target="_blank">Email</a></p>
         <p><a href="https://tempmail.email/" target="_blank">Email</a></p>
     </div>
     
-    <div class="section">
+    <div class="section three-d">
         <h2>Game Websites</h2>
         <p><a href="https://adamalsadi.github.io/games/index.html" target="_blank">Games</a></p>
         <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Amy and Daniel's Games</a></p>
@@ -153,7 +159,7 @@
             var command = document.getElementById('command-input').value.toLowerCase().trim();
             switch (command) {
                 case 'help':
-                    alert("Available commands:\n1. help\n2. dark mode");
+                    alert("Available commands:\n1. help\n2. dark mode\n3. 3d");
                     break;
                 case 'dark mode':
                     document.body.style.background = '#333';
@@ -162,6 +168,9 @@
                     document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#444');
                     document.querySelectorAll('.section a').forEach(el => el.style.color = '#ffdd57');
                     document.querySelectorAll('.time').forEach(el => el.style.color = '#ffdd57');
+                    break;
+                case '3d':
+                    document.querySelectorAll('h1, h2, .time, .section').forEach(el => el.classList.toggle('three-d'));
                     break;
                 default:
                     alert("Unknown command");
