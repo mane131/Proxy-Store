@@ -89,6 +89,42 @@
             perspective: 1000px;
             box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
         }
+        .theme-ui {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            width: 300px;
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 1000;
+        }
+        .theme-ui h3 {
+            margin-top: 0;
+        }
+        .theme-ui .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .theme-ui button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffdd57;
+            color: #333;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+        }
     </style>
 </head>
 <body onload="hideLoader()">
@@ -146,7 +182,7 @@
         <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
         <p><a href="https://wasdwasdwasdwasdwasdwasd.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://tutorialig.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
-        <p><a href="https://olncavior.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
+                <p><a href="https://olncavior.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
         <p><a href="https://oldaccguiop.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
         <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://kom.is.sigma.df.cissp.or.id/index.html" target="_blank">Games</a></p>
@@ -154,7 +190,7 @@
         <p><a href="https://happy.holidays.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://greetings.huzz.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://fleshpanopticon.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
-                <p><a href="https://learn.follobusiness.com/" target="_blank">Games</a></p>
+        <p><a href="https://learn.follobusiness.com/" target="_blank">Games</a></p>
         <p><a href="https://safe-selection.assenov.net/" target="_blank">Games</a></p>
         <p><a href="https://netflixa.blacknapkins.org/" target="_blank">Games</a></p>
         <p><a href="https://smallbluebird.alyaf.com/" target="_blank">Games</a></p>
@@ -199,6 +235,13 @@
         <button onclick="executeCommand()">Execute</button>
     </div>
 
+    <div class="theme-ui" id="theme-ui">
+        <button class="close-btn" onclick="toggleThemeUI()">X</button>
+        <h3>Select a Theme</h3>
+        <button onclick="applyTheme('dark')">Dark Theme</button>
+        <button onclick="applyTheme('light')">Light Theme</button>
+    </div>
+
     <script>
         function updateTime() {
             var now = new Date();
@@ -207,31 +250,4 @@
         }
         setInterval(updateTime, 1000);
 
-        function hideLoader() {
-            document.getElementById('loader').style.display = 'none';
-        }
-
-        function executeCommand() {
-            var command = document.getElementById('command-input').value.toLowerCase().trim();
-            switch (command) {
-                case 'help':
-                    alert("Available commands:\n1. help\n2. light mode");
-                    break;
-                case 'light mode':
-                    document.body.style.background = '#f0f0f0';
-                    document.body.style.color = '#333';
-                    document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
-                        el.style.color = '#333';
-                        el.style.textShadow = 'none';
-                    });
-                    document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#fff');
-                    document.querySelectorAll('.section a').forEach(el => el.style.color = '#007BFF');
-                    break;
-                default:
-                    alert("Unknown command");
-                    break;
-            }
-        }
-    </script>
-</body>
-</html>
+        function
