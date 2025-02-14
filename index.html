@@ -9,13 +9,13 @@
             font-family: 'Arial', sans-serif;
             margin: 20px;
             background: linear-gradient(to right, #333, #555);
-            color: #333; /* Match background color */
-            transition: background 0.3s, color 0.3s; /* Smooth transition */
+            color: #333;
+            transition: background 0.3s, color 0.3s;
         }
         h1, h2, .time, .section p, .section a {
-            color: #333; /* Match background color */
+            color: #333;
             text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57;
-            transition: color 0.3s, text-shadow 0.3s; /* Smooth transition */
+            transition: color 0.3s, text-shadow 0.3s;
         }
         h1 {
             border-bottom: 2px solid #ffdd57;
@@ -32,7 +32,7 @@
             border-radius: 10px;
             background-color: #444;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            transition: background-color 0.3s, color 0.3s;
         }
         .section a {
             text-decoration: none;
@@ -126,17 +126,32 @@
             display: block;
         }
         .space-theme {
-            background: url('https://i.imgur.com/B6B8Kyd.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
+            background: black;
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
         }
         .space-theme h1, .space-theme h2, .space-theme .time, .space-theme .section p, .space-theme .section a {
-            color: #fff;
+            color: #00ccff;
             text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
         }
         .space-theme .section {
             background-color: rgba(0, 0, 0, 0.7);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes falling-stars {
+            from {
+                transform: translateY(-10px) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        .star {
+            width: 5px;
+            height: 5px;
+            background: #00ccff;
+            position: absolute;
+            animation: falling-stars 3s linear infinite;
         }
     </style>
 </head>
@@ -183,13 +198,13 @@
     <div class="section three-d">
         <h2>Email</h2>
         <p><a href="https://www.mohmal.com/en/inbox#" target="_blank">Email</a></p>
-        <p><a href="https://tempmail.email/" target="_blank">Email</a></p>
+                <p><a href="https://tempmail.email/" target="_blank">Email</a></p>
     </div>
 
     <div class="section three-d">
         <h2>Games</h2>
         <p><a href="https://adamalsadi.github.io/games/index.html" target="_blank">Games</a></p>
-                <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Games</a></p>
+        <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Games</a></p>
         <p><a href="https://learn.follobusiness.com/" target="_blank">Games</a></p>
         <p><a href="https://hop.refillmaker.com/" target="_blank">Games</a></p>
         <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
@@ -310,10 +325,30 @@
 
         function setSpaceTheme() {
             document.body.classList.add('space-theme');
+            createStars();
         }
 
         function closeThemeUI() {
             document.getElementById('theme-ui').style.display = 'none';
+        }
+
+        function createStars() {
+            let starContainer = document.createElement('div');
+            starContainer.style.position = 'absolute';
+            starContainer.style.top = 0;
+            starContainer.style.left = 0;
+            starContainer.style.width = '100%';
+            starContainer.style.height = '100%';
+            starContainer.style.zIndex = -1;
+
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                starContainer.appendChild(star);
+            }
+            document.body.appendChild(starContainer);
         }
     </script>
 </body>
