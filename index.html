@@ -9,13 +9,13 @@
             font-family: 'Arial', sans-serif;
             margin: 20px;
             background: linear-gradient(to right, #333, #555);
-            color: #333;
-            transition: background 0.3s, color 0.3s;
+            color: #333; /* Match background color */
+            transition: background 0.3s, color 0.3s; /* Smooth transition */
         }
         h1, h2, .time, .section p, .section a {
-            color: #333;
+            color: #333; /* Match background color */
             text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57;
-            transition: color 0.3s, text-shadow 0.3s;
+            transition: color 0.3s, text-shadow 0.3s; /* Smooth transition */
         }
         h1 {
             border-bottom: 2px solid #ffdd57;
@@ -32,7 +32,7 @@
             border-radius: 10px;
             background-color: #444;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
         .section a {
             text-decoration: none;
@@ -125,6 +125,19 @@
             margin-top: 10px;
             display: block;
         }
+        .space-theme {
+            background: url('https://i.imgur.com/B6B8Kyd.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .space-theme h1, .space-theme h2, .space-theme .time, .space-theme .section p, .space-theme .section a {
+            color: #fff;
+            text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
+        }
+        .space-theme .section {
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body onload="hideLoader()">
@@ -176,14 +189,15 @@
     <div class="section three-d">
         <h2>Games</h2>
         <p><a href="https://adamalsadi.github.io/games/index.html" target="_blank">Games</a></p>
-        <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Games</a></p>
+                <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Games</a></p>
         <p><a href="https://learn.follobusiness.com/" target="_blank">Games</a></p>
         <p><a href="https://hop.refillmaker.com/" target="_blank">Games</a></p>
         <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
         <p><a href="https://wasdwasdwasdwasdwasdwasd.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://tutorialig.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
         <p><a href="https://olncavior.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
-                <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
+        <p><a href="https://oldaccguiop.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
+        <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
         <p><a href="https://kom.is.sigma.df.cissp.or.id/index.html" target="_blank">Games</a></p>
         <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
         <p><a href="https://happy.holidays.df.cissp.or.id/" target="_blank">Games</a></p>
@@ -239,6 +253,7 @@
         <h3>Select Theme</h3>
         <button onclick="setDarkMode()">Dark Mode</button>
         <button onclick="setLightMode()">Light Mode</button>
+        <button onclick="setSpaceTheme()">Space Theme</button>
     </div>
 
     <script>
@@ -272,6 +287,7 @@
         }
 
         function setDarkMode() {
+            document.body.classList.remove('space-theme');
             document.body.style.background = 'linear-gradient(to right, #333, #555)';
             document.body.style.color = '#333';
             document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
@@ -282,6 +298,7 @@
         }
 
         function setLightMode() {
+            document.body.classList.remove('space-theme');
             document.body.style.background = '#f0f0f0';
             document.body.style.color = '#333';
             document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
@@ -289,6 +306,10 @@
                 el.style.textShadow = 'none';
             });
             document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#fff');
+        }
+
+        function setSpaceTheme() {
+            document.body.classList.add('space-theme');
         }
 
         function closeThemeUI() {
