@@ -21,16 +21,249 @@
             border-bottom: 2px solid #ffdd57;
             padding-bottom: 10px;
         }
-        /* Additional styles omitted for brevity */
-        /* Style your sections, buttons, etc. as before */
+        .time {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .section a {
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .section a:hover {
+            color: #ff9900;
+            transform: scale(1.1);
+        }
+        .command-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .command-bar input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .command-bar button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffdd57;
+            color: #333;
+            cursor: pointer;
+        }
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: #ffdd57;
+        }
+        .three-d {
+            transform: rotateY(20deg) rotateX(10deg);
+            transition: transform 0.3s;
+            perspective: 1000px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+        }
+        .theme-ui {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            width: 300px;
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 1000;
+        }
+        .theme-ui h3 {
+            margin-top: 0;
+        }
+        .theme-ui .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .theme-ui button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffdd57;
+            color: #333;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+        }
+        .space-theme {
+            background: black;
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
+        }
+        .space-theme h1, .space-theme h2, .space-theme .time, .space-theme .section p, .space-theme .section a {
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
+        }
+        .space-theme .section {
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes falling-stars {
+            from {
+                transform: translateY(-10px) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        .star {
+            width: 5px;
+            height: 5px;
+            background: #00ccff;
+            position: absolute;
+            animation: falling-stars 3s linear infinite;
+        }
     </style>
 </head>
 <body onload="hideLoader()">
+    <audio id="spaceSong" src="space song.mp3" preload="auto"></audio>
     <div id="loader">Loading...</div>
     <h1 class="three-d">SecretV2.</h1>
     <div class="time three-d" id="datetime"></div>
     
-    <!-- Sections and links omitted for brevity -->
+    <div class="section three-d">
+        <h2>Interstellars</h2>
+        <p><a href="https://english-ll-learning.pagostepeapulco.gob.mx/" target="_blank">Interstellar</a></p>
+        <p><a href="https://apache.niteryder.net/" target="_blank">Interstellar</a></p>
+        <p><a href="https://4287613382.uncork.biz/" target="_blank">Interstellar</a></p>
+    </div>
+    
+    <div class="section three-d">
+        <h2>HammerHead</h2>
+        <p><a href="https://mathhomework3.ollemans.com/" target="_blank">HammerHead</a></p>
+        <p><a href="https://mathhomework4.innovatecchile.com/" target="_blank">HammerHead</a></p>
+        <p><a href="https://silhouette.brandish.rammerhead.nunc.se/" target="_blank">HammerHead</a></p>
+        <p><a href="https://ohsigma.yesitsreal.nunc.se/" target="_blank">HammerHead</a></p>
+    </div>
+    
+    <div class="section three-d">
+        <h2>Utopia</h2>
+        <p><a href="https://edu.focus.decharacter.com/" target="_blank">Utopia</a></p>
+        <p><a href="https://real.books.bahcekoysutyumurta.com/" target="_blank">Utopia</a></p>
+        <p><a href="https://data.quiz.hkenca.org/" target="_blank">Utopia</a></p>
+        <p><a href="https://guide.edu.bdeuronews.com/" target="_blank">Utopia</a></p>
+        <p><a href="https://guide.recap.whiteley.org/" target="_blank">Utopia</a></p>
+        <p><a href="https://world.level.anatomyplus.net/" target="_blank">Utopia</a></p>
+        <p><a href="https://howto.books.youngchurch.org/" target="_blank">Utopia</a></p>
+        <p><a href="https://goal.know.searchingforshakespeare.org/" target="_blank">Utopia</a></p>
+        <p><a href="https://recap.sci.eagleenergytrust.com/" target="_blank">Utopia</a></p>
+        <p><a href="https://topic.notes.homebrewer.org/" target="_blank">Utopia</a></p>
+    </div>
+    
+    <div class="section three-d">
+        <h2>Ai</h2>
+        <p><a href="https://copilot.microsoft.com/" target="_blank">Visit Copilot</a></p>
+        <p><a href="https://www.deepseek.com/" target="_blank">Visit DeepSeek</a></p>
+    </div>
+    
+    <div class="section three-d">
+        <h2>Email</h2>
+        <p><a href="https://www.mohmal.com/en/inbox#" target="_blank">Email</a></p>
+                <p><a href="https://tempmail.email/" target="_blank">Email</a></p>
+    </div>
+
+    <div class="section three-d">
+        <h2>Games</h2>
+        <p><a href="https://adamalsadi.github.io/games/index.html" target="_blank">Games</a></p>
+        <p><a href="https://amyanddaniel.github.io/macvg" target="_blank">Games</a></p>
+        <p><a href="https://learn.follobusiness.com/" target="_blank">Games</a></p>
+        <p><a href="https://hop.refillmaker.com/" target="_blank">Games</a></p>
+        <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
+        <p><a href="https://wasdwasdwasdwasdwasdwasd.df.cissp.or.id/" target="_blank">Games</a></p>
+        <p><a href="https://tutorialig.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
+        <p><a href="https://olncavior.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
+        <p><a href="https://oldaccguiop.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
+        <p><a href="https://loser.co.is.goated.df.cissp.or.id/" target="_blank">Games</a></p>
+        <p><a href="https://kom.is.sigma.df.cissp.or.id/index.html" target="_blank">Games</a></p>
+        <p><a href="https://home.sibmed.org.ru/" target="_blank">Games</a></p>
+        <p><a href="https://happy.holidays.df.cissp.or.id/" target="_blank">Games</a></p>
+        <p><a href="https://greetings.huzz.df.cissp.or.id/" target="_blank">Games</a></p>
+        <p><a href="https://fleshpanopticon.agguiopz.ip-dynamic.org/" target="_blank">Games</a></p>
+        <p><a href="https://learn.follobusiness.com/" target="_blank">Games</a></p>
+        <p><a href="https://safe-selection.assenov.net/" target="_blank">Games</a></p>
+        <p><a href="https://netflixa.blacknapkins.org/" target="_blank">Games</a></p>
+        <p><a href="https://smallbluebird.alyaf.com/" target="_blank">Games</a></p>
+    </div>
+
+    <div class="section three-d">
+        <h2>Tinfoil</h2>
+        <p><a href="https://assignment.jmwubg.com.au/" target="_blank">Tinfoil</a></p>
+        <p><a href="https://finti0lajpisd.global.ssl.fastly.net/" target="_blank">Tinfoil</a></p>
+        <p><a href="https://play.lexia-power-up.us/" target="_blank">Tinfoil</a></p>
+        <p><a href="https://view.lithiumis.us/" target="_blank">Tinfoil</a></p>
+        <p><a href="https://point-blank-should-have-won-proxathon.point-blank.us.kg/" target="_blank">Tinfoil</a></p>
+        <p><a href="http://schoology-math.ekharipati.com.np/" target="_blank">Tinfoil</a></p>
+    </div>
+
+    <div class="section three-d">
+        <h2>Arsenic</h2>
+        <p><a href="https://ls.hrowhxkgiw.chikiyan.cl/" target="_blank">Arsenic</a></p>
+        <p><a href="https://sigma4.chikiyan.cl/" target="_blank">Arsenic</a></p>
+    </div>
+
+    <div class="section three-d">
+        <h2>Space</h2>
+        <p><a href="https://r.webconstructions.co.uk/" target="_blank">Space</a></p>
+        <p><a href="https://skyzone.radarvision.co.za/" target="_blank">Space</a></p>
+    </div>
+
+    <div class="section three-d">
+        <h2>Update Logs</h2>
+        <ul id="update-logs">
+            <li>New UI Changes</li>
+            <li>Fixed Scrolling</li>
+            <li>Added "Light Mode" Command. (don't use, it's horrible)</li>
+            <li>Added "Tinfoil" Proxy</li>
+            <li>Added "Arsenic" Proxy</li>
+            <li>Added "Space" Proxy</li>
+            <li>Added Cool Space Theme</li>
+        </ul>
+    </div>
+
+    <div class="command-bar">
+        <input type="text" id="command-input" placeholder="Enter command here...">
+        <button onclick="executeCommand()">Execute</button>
+    </div>
 
     <div class="theme-ui" id="theme-ui">
         <button class="close-btn" onclick="closeThemeUI()">X</button>
@@ -39,8 +272,6 @@
         <button onclick="setLightMode()">Light Mode</button>
         <button onclick="setSpaceTheme()">Space Theme</button>
     </div>
-
-    <audio id="space-audio" src="space song.mp3" preload="auto"></audio>
 
     <script>
         function updateTime() {
@@ -73,17 +304,35 @@
         }
 
         function setDarkMode() {
-            // Dark mode settings
+            document.body.classList.remove('space-theme');
+            document.body.style.background = 'linear-gradient(to right, #333, #555)';
+            document.body.style.color = '#333';
+            document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
+                el.style.color = '#333';
+                el.style.textShadow = '0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57';
+            });
+            document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#444');
         }
 
         function setLightMode() {
-            // Light mode settings
+            document.body.classList.remove('space-theme');
+            document.body.style.background = '#f0f0f0';
+            document.body.style.color = '#333';
+            document.querySelectorAll('h1, h2, .time, .section p, .section a').forEach(el => {
+                el.style.color = '#333';
+                el.style.textShadow = 'none';
+            });
+            document.querySelectorAll('.section').forEach(el => el.style.backgroundColor = '#fff');
         }
 
         function setSpaceTheme() {
             document.body.classList.add('space-theme');
             createStars();
-            document.getElementById('space-audio').play(); // Play the space song
+        }
+                function setSpaceTheme() {
+            document.body.classList.add('space-theme');
+            createStars();
+            document.getElementById('spaceSong').play(); // Play the space song
         }
 
         function closeThemeUI() {
