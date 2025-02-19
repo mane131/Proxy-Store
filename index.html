@@ -291,6 +291,46 @@
         }
     }
 
+javascript
+let update = true; // Set to true to show the update screen
+let updateMessage = "Updating..."; // Default update message
+
+function toggleUpdate(state, message) {
+    update = state;
+    updateMessage = message || updateMessage; // Update the message if provided
+    if (update) {
+        showUpdateScreen();
+    } else {
+        hideUpdateScreen();
+    }
+}
+
+function showUpdateScreen() {
+    const updateScreen = document.createElement('div');
+    updateScreen.id = 'update-screen';
+    updateScreen.style.position = 'fixed';
+    updateScreen.style.top = 0;
+    updateScreen.style.left = 0;
+    updateScreen.style.width = '100%';
+    updateScreen.style.height = '100%';
+    updateScreen.style.backgroundColor = 'black';
+    updateScreen.style.color = 'white';
+    updateScreen.style.display = 'flex';
+    updateScreen.style.justifyContent = 'center';
+    updateScreen.style.alignItems = 'center';
+    updateScreen.style.fontSize = '3em';
+    updateScreen.style.textShadow = '0 0 10px white, 0 0 20px white, 0 0 30px white';
+    updateScreen.innerText = updateMessage;
+    document.body.appendChild(updateScreen);
+}
+
+function hideUpdateScreen() {
+    const updateScreen = document.getElementById('update-screen');
+    if (updateScreen) {
+        document.body.removeChild(updateScreen);
+    }
+}
+        
     // Add event listener for keydown
     document.addEventListener('keydown', handlePanicMode);
         
