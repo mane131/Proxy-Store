@@ -366,37 +366,6 @@
             }
             document.body.appendChild(starContainer);
         }
-            
-    <!-- Update Overlay -->
-    <div class="update-overlay" id="update-overlay">
-        <p>Updating...</p>
-        <p id="update-message"></p>
-    </div>
-
-    <script>
-        let update = true; // Change this to false to hide the update screen
-        let updateText = "New features and improvements coming soon!"; // Set your update message here
-
-        function showUpdateScreen() {
-            if (update) {
-                document.getElementById('update-message').textContent = updateText;
-                document.getElementById('update-overlay').style.display = 'flex';
-            }
-        }
-
-        // Call this function to show the update screen on load
-        showUpdateScreen();
-
-        function updateTime() {
-            var now = new Date();
-            var datetimeString = now.toLocaleString('en-US', { timeZone: 'America/Chicago' });
-            document.getElementById('datetime').textContent = datetimeString;
-        }
-        setInterval(updateTime, 1000);
-
-        function hideLoader() {
-            document.getElementById('loader').style.display = 'none';
-        }
     </script>
 </body>
 </html>
