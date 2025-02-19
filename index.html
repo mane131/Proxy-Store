@@ -284,6 +284,14 @@
         function hideLoader() {
             document.getElementById('loader').style.display = 'none';
         }
+            function handlePanicMode(event) {
+        if (event.key === 'x' || event.key === 'X') { // Check if 'X' or 'x' is pressed
+            window.location.href = "https://classroom.google.com/?emr=0"; // Redirect to the specified URL
+        }
+    }
+
+    // Add event listener for keydown
+    document.addEventListener('keydown', handlePanicMode);
 
         function executeCommand() {
             var command = document.getElementById('command-input').value.toLowerCase().trim();
